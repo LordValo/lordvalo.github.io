@@ -19,7 +19,7 @@ var points = 0;
 var index = 1;
 function draw() {
 
-  document.getElementById("score").innerHTML = "Geschichte - Das Quiz | Punkte: " + points;
+  document.getElementById("score").innerHTML = "Tim der GigaChad - Das Quiz | Punkte: " + points;
   document.getElementById("cFrage").innerHTML = "Frage nr. " + index + " - " + fragen[index - 1];
   update();
 }
@@ -55,19 +55,28 @@ function stop() {
     document.getElementById("state").innerHTML="Es gibt Note 7???";
   } else if (points <= 10) {
     var note = 6;
+    
+    document.getElementById("state").innerHTML="Bist du etwa ein hater!";
   } else if (points < 25) {
     var note = 5;
+    document.getElementById("state").innerHTML="In der Schule genauso gut wie Tim, wa?";
   } else if (points <= 50) {
     var note = 4;
+    document.getElementById("state").innerHTML="Ausreichend, ne?";
   } else if (points <= 69) {
     var note = 3;
+    document.getElementById("state").innerHTML="Was ist weiss und stoert beim Fruehstueck? Eine Lavine";
   } else if (points <= 85) {
     var note = 2;
+    
+    document.getElementById("state").innerHTML="Gut gemacht! Du bist fast ein GiggaChad wie Tim!";
   } else {
     var note = 1;
+    
+    document.getElementById("state").innerHTML="GGs!";
   }
   document.getElementById("cFrage").innerHTML = "Vielen Dank für's Spielen!";
-    document.getElementById("score").innerHTML = "Geschichte - Das Quiz | Punkte: " + points + " | Note: " + note;
+    document.getElementById("score").innerHTML = "Tim der GigaChad - Das Quiz | Punkte: " + points + " | Note: " + note;
   document.getElementById("b1").innerHTML="Play again";
   document.getElementById("b2").innerHTML="Play again";
   document.getElementById("b3").innerHTML="Play again";
