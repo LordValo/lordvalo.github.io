@@ -1,17 +1,17 @@
 // Fragen: 10 / +10 / -5 
-var fragen = ["Wie alt ist die älteste Höhlenmalerei?", "Wie lange hat das alte Ägypten als Großmacht überlebt?", "Welches dieser Bauwerke gehörte nicht zu den Weltwundern der Antike?", "Wie viele Hauptgötter gab es im antiken Griechenland?", "Wie viele Länder waren unter Römischer Herrschaft zur Zeit seiner größten Ausdehnung?", "Wann fing der erste Kreuzzug an?", "Wann wurde der amerikanische Kontinent entdeckt?", "Wie viele Soldaten kamen im amerikanischen Bürgerkrieg ums Leben?", "Welches Land wurde im 2. Weltkrieg mit Atombomben bebombt?", "Welches Land hat die Atombombe abgeworfen?", "Vielen Dank fürs Spielen!"];
+var fragen = ["Wie GEIL findest du TIMMMMM?", "Wann wolltest du als letztes TIM bei einem Erwachsenen Film zuschauen?", "Wie viele ECHTE Haare hat er?", "Wie alt ist TIM die Geile Sauuu?", "Wie viele Länder waren unter Römischer Herrschaft zur Zeit seiner größten Ausdehnung?", "Mag Tim füße??", "Ist das Tim auf dem Fetten Bild?", "Wer ist die Geilste Sau auf der Welt?", "Was ist die größte Zahl?", "LETZTE FRAGE: Wann hat tim das letzte mal einen abgelassen?", "Vielen Dank fürs Spielen!"];
 var lastQuestion = 11;
 var answerIndex = [
-  ["45500", "43900", "65000", "32000"],
-  ["etwa 3000 Jahre", "etwa 4000 Jahre", "etwa 2000 Jahre", "etwa 5000 Jahre"],
-  ["Koloss von Rhodos", "Leuchtturm von Pharos", "Das Kolloseum", "Hängenden Gärten von Babylon"],
-  ["12", "10", "3", "7"],
+  ["sehr geil", "er ist hund", "ja", "ka"],
+  ["Nie", "vor 69 sekunden", "Was ist das", "Ich mag Jonas mehr"],
+  ["200", "keine also Perücke", "Ich würde es gerne mit ihm Herausfinden...", "brauche es nicht zu wissen"],
+  ["15 oder 16", "ka", "3", "69"],
   ["31", "25", "19", "46"],
-  ["1095", "1105", "1080", "1090"],
-  ["1490", "1496", "1492", "1500"],
-  ["540000", "740000", "620000", "810000"],
-  ["Japan", "Sowjetunion", "Deutschland", "Frankreich"],
-  ["Deutschland", "Sowjetunion", "USA", "Großbritannien"],
+  ["ka", "Ichaufjedenfallnicht", "FÜßEEE!!", "ja"],
+  ["ja", "ne", "Tim in gigaform", "Baum"],
+  ["Jonas Winkelhofer", "Veganerian", "TIMDIEGEILESAU!!!!!!!!!!", "Maddin"],
+  ["5", "2", "Deutschland", "1"],
+  ["will ich nicht wissen", "vor 3 min", "ich weiß es", "ich nicht"],
   ["1","1","1", "1"]
 ];
 var trues=[1,2,3,1,4,1,3,3,1,3];
