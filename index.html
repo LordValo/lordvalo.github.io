@@ -41,9 +41,14 @@
     }
 
     .award {
-      margin-top: 40px;
+      margin-top: 30px;
       font-size: 1.5em;
       color: #004080;
+    }
+
+    img {
+      border-radius: 12px;
+      margin-top: 20px;
     }
   </style>
 </head>
@@ -51,6 +56,10 @@
   <h1>Willkommen auf der offiziellen Fanpage von Tim Wimmer! 🎉</h1>
   <div class="welcome" id="welcomeMsg">Schön, dass du da bist!</div>
 
+  <!-- Bild von Tim Wimmer -->
+  <img src="tim.jpg" alt="Tim Wimmer" style="max-width: 300px;">
+
+  <!-- Fan-Level Auswahl -->
   <div class="question">Wie sehr magst du Tim Wimmer?</div>
   <button onclick="showAward('superfan')">Ich bin ein Mega-Fan!</button>
   <button onclick="showAward('normal')">Er ist ganz cool 😎</button>
@@ -58,6 +67,15 @@
 
   <div class="award" id="award"></div>
 
+  <!-- Ähnlichkeits-Vergleich -->
+  <hr style="margin: 40px 0;">
+
+  <div class="question">Wie ähnlich bist du Tim Wimmer? (1 = kaum, 10 = fast ein Zwilling)</div>
+  <input type="range" id="similaritySlider" min="1" max="10" value="5" oninput="updateSimilarity()">
+  <div id="similarityValue">Ähnlichkeit: 5</div>
+  <img id="similarityImage" src="" alt="Ähnlichkeitsbild" style="max-width: 300px; display: none;">
+
+  <!-- Script -->
   <script>
     function showAward(level) {
       const awardEl = document.getElementById('award');
@@ -65,18 +83,35 @@
 
       switch(level) {
         case 'superfan':
-          message = 'WOW, wie kann man nur so ein opfer sein...';
+          message = '🏆 Du bist ein wahrer Tim Wimmer ULTRA! Danke für deine Unterstützung!';
           break;
         case 'normal':
           message = '👍 Schön, dass du Tim sympathisch findest!';
           break;
         case 'kritisch':
-          message = '🧐 Vielleicht lernst du Tim ja noch besser kennen!';
+          message = '🧐 Was ein OPFER!';
           break;
       }
 
       awardEl.textContent = message;
     }
+
+    function updateSimilarity() {
+      const value = document.getElementById('similaritySlider').value;
+      const display = document.getElementById('similarityValue');
+      const image = document.getElementById('similarityImage');
+
+      display.textContent = `Ähnlichkeit: ${value}`;
+
+      if (value <= 5) {
+        image.src = 'https://via.placeholder.com/300x200?text=Nicht+so+%C3%A4hnlich';
+        image.style.display = 'block';
+      } else {
+        image.src = 'https://via.placeholder.com/300x200?text=Sehr+%C3%A4hnlich';
+        image.style.display = 'block';
+      }
+    }
   </script>
 </body>
 </html>
+
