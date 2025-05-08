@@ -7,19 +7,20 @@ div {
   text-align: center;
 }
 button {
-  background-color: #434C5E;
-  color: #D8DEE9;
+  background-color: #0000FF;
+  color: #FF0000;
   border: none;
   padding: 10px 20px;
   font-size: 16px;
 }
 button:hover {
-  background-color: #3B4252;
+  background-color: #FFFF00;
+  color: #0000FF;
 }
 button:active {
   background-color: #4C566A;
 }
 body {
-  background-color: #2E3440;
-  color:#ECEFF4;
+  background-color: #FF0000;
+  color:#00FF00;
 }
