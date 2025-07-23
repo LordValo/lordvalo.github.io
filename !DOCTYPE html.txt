@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Webside of Lord Valo</title>
+  <style>
+    :root {
+      --bg-color: #0d0d0f;
+      --text-color: #f0f0f0;
+      --accent-color: #ff6a00;
+      --card-bg: #1c1c1e;
+      --shadow: rgba(0, 0, 0, 0.5);
+    }
+
+    * {
+      transition: background-color 0.4s ease, color 0.3s ease, box-shadow 0.3s ease;
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0 20px;
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--bg-color);
+      color: var(--text-color);
+      overflow-x: hidden;
+    }
+
+    .orange-bar-top {
+      height: 8px;
+      width: 100%;
+      background: linear-gradient(to right, #ff6a00, #ff8800);
+    }
+
+    .orange-bar-side {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      width: 8px;
+      background: linear-gradient(to bottom, #ff6a00, #ff8800);
+      z-index: 0;
+    }
+
+    .orange-bar-left { left: 0; }
+    .orange-bar-right { right: 0; }
+
+    #settings-button {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      font-size: 26px;
+      cursor: pointer;
+      color: var(--accent-color);
+      z-index: 2;
+    }
+
+    #settings-menu {
+      position: absolute;
+      top: 60px;
+      left: 15px;
+      background: var(--card-bg);
+      border: 1px solid var(--accent-color);
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 0 0 12px var(--shadow);
+      display: none;
+      min-width: 200px;
+      z-index: 2;
+      opacity: 0;
+      transform: translateY(-10px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    #settings-menu.show {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 8px;
+      background: #2a2a2d;
+      color: var(--text-color);
+      border: none;
+      border-radius: 6px;
+    }
+
+    header {
+      margin-top: 80px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin: 0;
+      color: var(--accent-color);
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin: 10px 0 40px;
+      opacity: 0.8;
+    }
+
+    #content {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      padding-bottom: 60px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      color: var(--text-color);
+      padding: 25px 30px;
+      border-radius: 18px;
+      font-size: 18px;
+      box-shadow: 0 6px 16px var(--shadow);
+      cursor: pointer;
+      min-width: 200px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px) scale(1.03);
+      background: var(--accent-color);
+      color: #000;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 14px;
+      color: #888;
+      margin: 40px 0;
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="orange-bar-top"></div>
+  <div class="orange-bar-side orange-bar-left"></div>
+  <div class="orange-bar-side orange-bar-right"></div>
+
+  <div id="settings-button" onclick="toggleSettings()">⚙️</div>
+  <div id="settings-menu">
+    <h3>⚙️ Settings</h3>
+    <label for="themeSelect">Theme:</label>
+    <select id="themeSelect" onchange="changeTheme()">
+      <option value="dark">Dark Mode</option>
+      <option value="light">Light Mode</option>
+    </select>
+    <br><br>
+    <label for="languageSelect">Language:</label>
+    <select id="languageSelect" onchange="changeLanguage()">
+      <option value="en">English</option>
+      <option value="de">Deutsch</option>
+    </select>
+  </div>
+
+  <header>
+    <h1 id="title">Webside of Lord Valo</h1>
+    <p id="subtitle">Choose a game or quiz to begin your journey.</p>
+  </header>
+
+  <div id="content">
+    <div class="card">🎮 Game 1 (Coming Soon)</div>
+    <div class="card">🧠 Quiz 1 (Coming Soon)</div>
+  </div>
+
+  <footer>© 2025 Lord Valo</footer>
+
+  <script>
+    window.onload = function () {
+      const savedTheme = localStorage.getItem('theme') || 'dark';
+      const savedLang = localStorage.getItem('language') || 'en';
+      document.getElementById('themeSelect').value = savedTheme;
+      document.getElementById('languageSelect').value = savedLang;
+      applyTheme(savedTheme);
+      applyLanguage(savedLang);
+    };
+
+    function toggleSettings() {
+      const menu = document.getElementById('settings-menu');
+      menu.classList.toggle('show');
+    }
+
+    function changeTheme() {
+      const theme = document.getElementById('themeSelect').value;
+      localStorage.setItem('theme', theme);
+      applyTheme(theme);
+    }
+
+    function applyTheme(theme) {
+      if (theme === 'dark') {
+        document.documentElement.style.setProperty('--bg-color', '#0d0d0f');
+        document.documentElement.style.setProperty('--text-color', '#f0f0f0');
+        document.documentElement.style.setProperty('--accent-color', '#ff6a00');
+        document.documentElement.style.setProperty('--card-bg', '#1c1c1e');
+        document.documentElement.style.setProperty('--shadow', 'rgba(0, 0, 0, 0.5)');
+      } else {
+        document.documentElement.style.setProperty('--bg-color', '#f4f1ea');
+        document.documentElement.style.setProperty('--text-color', '#222');
+        document.documentElement.style.setProperty('--accent-color', '#ff7f11');
+        document.documentElement.style.setProperty('--card-bg', '#ffffffee');
+        document.documentElement.style.setProperty('--shadow', 'rgba(100, 100, 100, 0.2)');
+      }
+    }
+
+    function changeLanguage() {
+      const lang = document.getElementById('languageSelect').value;
+      localStorage.setItem('language', lang);
+      applyLanguage(lang);
+    }
+
+    function applyLanguage(lang) {
+      if (lang === 'de') {
+        document.getElementById('title').innerText = "Webseite von Lord Valo";
+        document.getElementById('subtitle').innerText = "Wähle ein Spiel oder Quiz, um dein Abenteuer zu beginnen.";
+      } else {
+        document.getElementById('title').innerText = "Webside of Lord Valo";
+        document.getElementById('subtitle').innerText = "Choose a game or quiz to begin your journey.";
+      }
+    }
+  </script>
+</body>
+</html>
