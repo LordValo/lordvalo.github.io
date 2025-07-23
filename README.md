@@ -1,5 +1,3 @@
-<!-- README.md -->
-
 <h1 align="center" id="title">Webside of Lord Valo</h1>
 <p align="center" id="subtitle">Choose a game or quiz to begin your journey.</p>
 
